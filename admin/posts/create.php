@@ -45,7 +45,7 @@
 
         <?php include(ROOT_PATH . '/app/helpers/formErrors.php'); ?>
 
-        <form action="create.php" method="post">
+        <form action="create.php" method="post" enctype="multipart/form-data">
           <div>
             <label>Title</label>
             <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
@@ -63,8 +63,7 @@
             <select name="topic_id" class="text-input">
               <option value=""> </option>
               <?php foreach ($topics as $key => $topic): ?>
-                
-                  <?php if (!empty($topic_id) && $topic_id == topic['id']): ?>
+                <?php if (!empty($topic_id) && $topic_id == topic['id']): ?>
                   <option selected value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
                 <?php else: ?>
                   <option value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
@@ -75,10 +74,17 @@
             </select>
           </div>
           <div>
-            <label> 
-              <input type="checkbox" name="published">
-                Publish
-            </label>
+            <?php if (empty($published)): ?>
+              <label> 
+                <input type="checkbox" name="published">
+                Publish 
+              </label>
+            <?php else: ?>
+              <label> 
+                <input type="checkbox" name="published" checked>
+                Publish 
+              </label>
+            <?php endif; ?>
           </div>
           <div>
             <button type="submit" name="add-post" class="btn btn-big">Add Post</button>

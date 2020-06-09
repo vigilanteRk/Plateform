@@ -47,7 +47,7 @@
 }
 
 
-function selectOne($table, $conditions = []) {
+function selectOne($table, $conditions) {
   global $conn;
   $sql = "SELECT * FROM $table";
  
@@ -63,7 +63,7 @@ function selectOne($table, $conditions = []) {
 
   $sql = $sql . " LIMIT 1";
   $stmt = executeQuery($sql, $conditions);  
-  $records = $stmt->get_result()->fetch_assoc() ;
+  $records = $stmt->get_result()->fetch_assoc();
   return $records;
 
 }
@@ -111,6 +111,3 @@ function delete($table, $id) {
   $stmt = executeQuery($sql, ['id' => $id]);
   return $stmt->affected_rows;
 }
-
-// $id = delete('users', 0);
-// dd($id);
