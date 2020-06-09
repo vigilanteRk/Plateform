@@ -91,11 +91,11 @@ function update($table, $id, $data) {
   $sql = "UPDATE $table SET ";
 
   $i = 0;
-  foreach($data as $key => $value) {
-    if($i === 0) {
-      $sql = $sql . " $key=?";
+  foreach ($data as $key => $value) {
+    if ($i === 0) {
+       $sql = $sql . ", $key=?";
     } else {
-      $sql = $sql . ", $key=?";
+       $sql = $sql . ", $key=?";
     }
     $i++;
   }

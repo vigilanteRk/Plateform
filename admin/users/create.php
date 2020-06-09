@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 <?php include("../../path.php"); ?>
+<?php include(ROOT_PATH . "/app/controllers/users.php"); ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -59,14 +60,13 @@
             <input type="text" name="PasswordConf" id="" class="text-input">
           </div>
           <div>
-            <label>Role</label>
-            <select name="role" class="text-input">
-              <option value="Author">Author</option>
-              <option value="Admin">Admin</option>
-            </select>
+            <label>
+              <input type="checkbox" name="admin">
+              Admin
+            </label>
           </div>
           <div>
-            <button type="submit" class="btn btn-big">Add User</button>
+            <button type="submit" name="create-admin" class="btn btn-big">Add User</button>
           </div>
         </form>
       </div>
