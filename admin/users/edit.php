@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 <?php include("../../path.php"); ?>
+<?php include(ROOT_PATH . "/app/controllers/users.php"); ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -41,38 +42,46 @@
 
       <div class="content">
         <h2 class="page-title">Edit User</h2>
-        <form action="create.php" method="post">
+        <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+        <form action="edit.php" method="post">
+          <input type="hidden" name="id" value="<?php echo $id; ?>">
           <div>
             <label>Username</label>
-            <input type="text" name="username" id="" class="text-input">
+            <input type="text" name="username" value="<?php echo $username; ?>" class="text-input">
           </div>
           <div>
             <label>Email</label>
-            <input type="text" name="email" id="" class="text-input">
+            <input type="email" name="email" value="<?php echo $email; ?>" class="text-input">
           </div>
           <div>
             <label>Password</label>
-            <input type="text" name="password" id="" class="text-input">
+            <input type="password" name="password" value="<?php echo $password; ?>" class="text-input">
           </div>
           <div>
             <label>Password Confirmation</label>
-            <input type="text" name="PasswordConf" id="" class="text-input">
+            <input type="password" name="passwordConf" value="<?php echo $passwordConf; ?>" class="text-input">
           </div>
           <div>
-            <label>Role</label>
-            <select name="role" class="text-input">
-              <option value="Author">Author</option>
-              <option value="Admin">Admin</option>
-            </select>
-          </div>
-          <div>
-            <button type="submit" class="btn btn-big">Update User</button>
-          </div>
-        </form>
-      </div>
+            <?php if(isset($admin) && $admin == 1): ?>
+              <label>
+                <input type="checkbox" name="admin">
+                Admin
+              </label>
+            <?php else: ?>
+              <label>
+                <input type="checkbox" name="admin">
+                Admin
+              </label>
+            <?php endif; ?>
+        </div>
+        <div>
+          <button type="submit" name="update-user" class="btn btn-big">Update User</button>
+        </div>
+      </form>
     </div>
-    <!-- // Admin Content -->
   </div>
+  <!-- // Admin Content -->
+</div>
 <!-- // Page Wrapper -->
 
 
