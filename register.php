@@ -34,7 +34,7 @@
       </div>
       <div>
         <label>Email</label>
-        <input type="text" name="email" value="<?php echo $email; ?>" class="text-input">
+        <input type="email" name="email" value="<?php echo $email; ?>" class="text-input">
       </div>
       <div>
         <label>Password</label>
@@ -42,7 +42,7 @@
       </div>
       <div>
         <label>Password Confirmation</label>
-        <input type="text" name="passwordConf" value="<?php echo $passwordConf; ?>" class="text-input">
+        <input type="password" name="passwordConf" value="<?php echo $passwordConf; ?>" class="text-input">
       </div>
       <div>
         <button type="submit" name="register-btn" class="btn btn-big">Register</button>
