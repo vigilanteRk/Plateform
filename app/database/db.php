@@ -21,7 +21,7 @@
   function selectAll($table, $conditions = []) {
     global $conn;
     $sql = "SELECT * FROM $table";
-    if(empty($conditions)){
+    if (empty($conditions)) {
       $stmt = $conn->prepare($sql);
       $stmt->execute();
       $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -70,7 +70,7 @@ function selectOne($table, $conditions) {
 
 function create($table, $data) {
   global $conn;
-  $sql = "INSERT INTO users SET";
+  $sql = "INSERT INTO $table SET ";
 
   $i = 0;
   foreach($data as $key => $value) {
@@ -93,7 +93,7 @@ function update($table, $id, $data) {
   $i = 0;
   foreach ($data as $key => $value) {
     if ($i === 0) {
-       $sql = $sql . ", $key=?";
+       $sql = $sql . " $key=?";
     } else {
        $sql = $sql . ", $key=?";
     }
@@ -110,4 +110,28 @@ function delete($table, $id) {
   $sql = "DELETE FROM $table WHERE id=?";
   $stmt = executeQuery($sql, ['id' => $id]);
   return $stmt->affected_rows;
+}
+
+function getPublishedPosts() {
+  global $conn;
+  $sql = "SELECT p.*, u.username FROM posts AS p JOIN users AS u ON p.user_id=u.id WHERE p.published=?";
+  $stmt = executeQuery($sql, ['published' => 1]);  
+  $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+  return $records;
+}
+
+function searchPosts($term) {
+  $match = '%' . $term . '%';
+  global $conn;
+  $sql = "SELECT 
+            p.*, u.username 
+          FROM posts AS p 
+          JOIN users AS u 
+          ON p.user_id=u.id 
+          WHERE p.published=?
+          AND p.title LIKE ? OR p.body LIKE ?";
+
+  $stmt = executeQuery($sql, ['published' => 1, 'title' => $match, 'body' => $match]);  
+  $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+  return $records;
 }
