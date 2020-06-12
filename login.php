@@ -1,5 +1,5 @@
-<?php include("path.php") ?>
-<?php include(ROOT_PATH ."/app/controllers/users.php"); 
+<?php include('path.php'); ?>
+<?php include(ROOT_PATH . '/app/controllers/users.php'); 
 guestsOnly();
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ guestsOnly();
 
 <body>
   
-<?php include(ROOT_PATH ."/app/includes/header.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
   <div class="auth-content">
 

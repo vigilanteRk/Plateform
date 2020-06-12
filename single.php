@@ -33,7 +33,7 @@ $posts = selectAll('posts', ['published' => 1]);
   src="https://connect.facebook.net/hi_IN/sdk.js#xfbml=1&version=v7.0">
 </script>
 
-<?php include(ROOT_PATH ."/app/includes/header.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
 <!-- Page WrapPer -->
   <div class="page-wrapper">
@@ -94,7 +94,7 @@ $posts = selectAll('posts', ['published' => 1]);
   </div>
 <!-- // Page Wrapper -->
 
-<?php include(ROOT_PATH ."/app/includes/footer.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 <!-- JQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

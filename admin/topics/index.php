@@ -1,5 +1,5 @@
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/app/controllers/topics.php"); 
+<?php include(ROOT_PATH . '/app/controllers/topics.php'); 
 adminOnly();
 ?>
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ adminOnly();
       <div class="content">
         <h2 class="page-title">Manage Topics</h2>
 
-        <?php include(ROOT_PATH ."/app/includes/messages.php"); ?>
+        <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
         
         <table>
           <thead>

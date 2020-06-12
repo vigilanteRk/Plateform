@@ -1,5 +1,5 @@
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/app/controllers/users.php"); 
+<?php include(ROOT_PATH . '/app/controllers/users.php'); 
 adminOnly();
 ?>
 <!DOCTYPE html>
@@ -64,7 +64,7 @@ adminOnly();
             <input type="password" name="passwordConf" value="<?php echo $passwordConf; ?>" class="text-input">
           </div>
           <div>
-            <?php if(isset($admin) && $admin == 1): ?>
+            <?php if (isset($admin) && $admin == 1): ?>
               <label>
                 <input type="checkbox" name="admin">
                 Admin

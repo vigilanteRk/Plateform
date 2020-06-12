@@ -1,6 +1,6 @@
 <?php 
 include("path.php");
-include(ROOT_PATH . "/app/controllers/topics.php");
+include(ROOT_PATH . '/app/controllers/topics.php');
 
 $posts = array();
 $postsTitle = 'Recent Posts';
@@ -36,8 +36,8 @@ if (isset($_GET['t_id'])) {
 
 <body>
  
-  <?php include(ROOT_PATH ."/app/includes/header.php"); ?>
-  <?php include(ROOT_PATH ."/app/includes/messages.php"); ?>
+  <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+  <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
 
 <!-- Page WrapPer -->
   <div class="page-wrapper">

@@ -22,7 +22,7 @@ function loginUser($user) {
    $_SESSION['message'] = 'You are now logged in';
    $_SESSION['type'] = 'success';
 
-   if($_SESSION['admin']) {
+   if ($_SESSION['admin']) {
       header('location: ' . BASE_URL . '/admin/dashboard.php');
    } else {
       header('location: ' . BASE_URL . '/index.php');
@@ -40,8 +40,8 @@ if (isset($_POST['register-btn']) || isset($_POST['create-admin'])) {
       if (isset($_POST['admin'])) {
          $_POST['admin'] = 1;
          $user_id = create($table, $_POST);
-         $_SESSION['message'] = "Admin user created successfuly";
-         $_SESSION['type'] = "success";
+         $_SESSION['message'] = 'Admin user created successfuly';
+         $_SESSION['type'] = 'success';
          header('location: ' . BASE_URL . '/admin/users/index.php');
          exit();
       } else {
@@ -71,8 +71,8 @@ if (isset($_POST['update-user'])) {
 
       $_POST['admin'] = isset($_POST['admin']) ? 1 : 0;
       $count = update($table, $id, $_POST);
-      $_SESSION['message'] = "Admin user created successfuly";
-      $_SESSION['type'] = "success";
+      $_SESSION['message'] = 'Admin user created successfuly';
+      $_SESSION['type'] = 'success';
       header('location: ' . BASE_URL . '/admin/users/index.php');
       exit();
    } else {
@@ -93,7 +93,7 @@ if (isset($_GET['id'])) {
    $email = $user['email'];
 }
 
-if(isset($_POST['login-btn'])) {
+if (isset($_POST['login-btn'])) {
    $errors = validateLogin($_POST);
 
    if(count($errors) === 0) {
@@ -112,8 +112,8 @@ if(isset($_POST['login-btn'])) {
 if (isset($_GET['delete_id'])) {
    adminOnly();
    $count = delete($table, $_GET['delete_id']);
-   $_SESSION['message'] = "Admin user created deleted";
-   $_SESSION['type'] = "success";
+   $_SESSION['message'] = 'Admin user created deleted';
+   $_SESSION['type'] = 'success';
    header('location: ' . BASE_URL . '/admin/users/index.php');
    exit();
 }

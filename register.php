@@ -1,5 +1,5 @@
-<?php include("path.php"); ?>
-<?php include(ROOT_PATH . "/app/controllers/users.php"); 
+<?php include('path.php'); ?>
+<?php include(ROOT_PATH . '/app/controllers/users.php'); 
 guestsOnly();
 ?>
 <!DOCTYPE html>
@@ -22,13 +22,13 @@ guestsOnly();
 
 <body>
  
-<?php include(ROOT_PATH ."/app/includes/header.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
   <div class="auth-content">
     <form action="register.php" method="post">
       <h2 class="form-title">Register</h2>
 
-      <?php include(ROOT_PATH ."/app/helpers/formErrors.php"); ?>
+      <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
       <div>
         <label>Username</label>

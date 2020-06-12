@@ -1,5 +1,5 @@
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/app/controllers/posts.php"); 
+<?php include(ROOT_PATH . '/app/controllers/posts.php'); 
 adminOnly();
 ?>
 <!DOCTYPE html>
@@ -61,9 +61,9 @@ adminOnly();
                 <td><a href="edit.php?delete_id=<?php echo $post['id']; ?>" class="delete">delete</a></td>
 
                 <?php if ($post['published']): ?>
-                  <td><a href="edit.php?published=0&p_id=<php echo $post['id] ?>" class="unpublish">unpublish</a></td>
+                  <td><a href="edit.php?published=0&p_id=<?php echo $post['id']; ?>" class="unpublish">unpublish</a></td>
                 <?php else: ?>
-                  <td><a href="edit.php?published=1&p_id=<php echo $post['id] ?>" class="publish">publish</a></td>
+                  <td><a href="edit.php?published=1&p_id=<?php echo $post['id']; ?>" class="publish">publish</a></td>
                 <?php endif; ?>
 
               </tr>

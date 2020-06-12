@@ -73,8 +73,8 @@ function create($table, $data) {
   $sql = "INSERT INTO $table SET ";
 
   $i = 0;
-  foreach($data as $key => $value) {
-    if($i === 0) {
+  foreach ($data as $key => $value) {
+    if ($i === 0) {
       $sql = $sql . " $key=?";
     } else {
       $sql = $sql . ", $key=?";

@@ -1,5 +1,5 @@
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/app/controllers/posts.php");
+<?php include(ROOT_PATH . '/app/controllers/posts.php');
 adminOnly();
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ adminOnly();
           </div>
           <div>
             <label>Body</label>
-            <textarea name="body" id="body"><?php echo $body ?></textarea>
+            <textarea name="body"  value="<?php echo $body ?>" id="body"></textarea>
           </div>
           <div>
             <label>Image</label>
