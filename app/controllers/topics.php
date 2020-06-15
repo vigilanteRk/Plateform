@@ -14,7 +14,7 @@ $description = '';
 $topics = selectAll($table);
 
 if (isset($_POST['add-topic'])) {
-    adminOnly();
+    // adminOnly();
     $errors = validateTopic($_POST);
 
     if (count($errors) === 0) {
@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
 }
 
 if (isset($_GET['del_id'])) {
-    adminOnly();
+    // adminOnly();
     $id = $_GET['del_id'];
     $count = delete($table, $id);
     $_SESSION['message'] = 'Topic deleted successfully';
@@ -49,7 +49,7 @@ if (isset($_GET['del_id'])) {
 }
 
 if (isset($_POST['update-topic'])) {
-    adminOnly();
+    // adminOnly();
     $errors = validateTopic($_POST);
     if(count($errors) === 0) {
         $id = $_POST['id'];

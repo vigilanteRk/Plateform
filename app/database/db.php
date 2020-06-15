@@ -32,7 +32,7 @@
 
       $i = 0;
       foreach($conditions as $key => $value) {
-        if($i === 0) {
+        if  ($i === 0) {
           $sql = $sql . " WHERE $key=?";
         } else {
           $sql = $sql . " AND $key=?";

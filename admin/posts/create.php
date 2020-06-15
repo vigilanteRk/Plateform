@@ -1,6 +1,6 @@
 <?php include("../../path.php"); ?>
 <?php include(ROOT_PATH . '/app/controllers/posts.php');
-adminOnly();
+// adminOnly();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +66,7 @@ adminOnly();
               <option value=""></option>
               <?php foreach ($topics as $key => $topic): ?>
                 
-                <?php if (!empty($topic_id) && $topic_id == topic['id']): ?>
+                <?php if (!empty($topic_id) && $topic_id == $topic['id'] ): ?>
                   <option selected value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
                 <?php else: ?>
                   <option value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>

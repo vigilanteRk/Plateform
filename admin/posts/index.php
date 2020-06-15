@@ -1,6 +1,6 @@
 <?php include("../../path.php"); ?>
 <?php include(ROOT_PATH . '/app/controllers/posts.php'); 
-adminOnly();
+//adminOnly();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +55,7 @@ adminOnly();
             <?php foreach ($posts as $key => $post): ?>
               <tr>
                 <td><?php echo $key + 1; ?></td>
-                <td><?php echo $post['title'] ?></td>
+                <td><?php echo $post['title']; ?></td>
                 <td>Mom</td>
                 <td><a href="edit.php?id=<?php echo $post['id']; ?>" class="edit">edit</a></td>
                 <td><a href="edit.php?delete_id=<?php echo $post['id']; ?>" class="delete">delete</a></td>

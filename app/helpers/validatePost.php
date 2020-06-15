@@ -4,20 +4,20 @@ function validatePost($post) {
 
   $errors = array();
 
-  if(empty($post['title'])) {
+  if (empty($post['title'])) {
      array_push($errors, 'Title is required');
   }
 
-  if(empty($post['body'])) {
+  if (empty($post['body'])) {
      array_push($errors, 'Body is required');
   }
 
-  if(empty($post['topic_id'])) {
+  if (empty($post['topic_id'])) {
      array_push($errors, 'Plesae select a topic');
   }
 
   $existingPost= selectOne('posts', ['title' => $post['title']]);
-  if($existingPost) {
+  if ($existingPost) {
      if (isset($post['update-post']) && $existingPost['id'] != $post['id']) {
       array_push($errors, 'Post with that title already exists');
      }

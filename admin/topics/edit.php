@@ -1,6 +1,6 @@
 <?php include("../../path.php"); ?>
 <?php include(ROOT_PATH . '/app/controllers/topics.php'); 
-adminOnly();
+//adminOnly();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +54,7 @@ adminOnly();
           </div>
           <div>
             <label>Description</label>
-            <textarea name="description" id="body"><?php echo $description; ?></textarea>
+            <textarea name="description" value="<?php echo $description; ?>" id="body"></textarea>
           </div>
           
           <div>

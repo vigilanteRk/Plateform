@@ -8,13 +8,13 @@ function validateTopic($topic) {
      array_push($errors, 'Name is required');
   }
 
-  $existingTopic= selectOne('topics', ['name' => $post['name']]);
+  $existingTopic= selectOne('topics', ['name' => $topic['name']]);
   if($existingTopic) {
-     if (isset($post['update-topic']) && $existingTopic['id'] != $post['id']) {
+     if (isset($topic['update-topic']) && $existingTopic['id'] != $topic['id']) {
       array_push($errors, 'Name already exists');
      }
 
-     if (isset($post['add-topic'])) {
+     if (isset($topic['add-topic'])) {
       array_push($errors, 'Name already exists');
      }
   }
